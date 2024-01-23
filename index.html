@@ -12,13 +12,19 @@
         <p class="subtitle">Presented by Group 1</p>
     </header>
     <div class="timer-container">
+        <label for="study-duration">Study Duration (minutes):</label>
+        <input type="number" id="study-duration" value="25" min="1">
+
+        <label for="break-duration">Break Duration (minutes):</label>
+        <input type="number" id="break-duration" value="5" min="1">
+
         <h1 id="timer">25:00</h1>
         <button id="start" onclick="startTimer()">Start</button>
         <button id="reset" onclick="resetTimer()">Reset</button>
-    </div>
 
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2mVoVfw1xlFcEGl3xLEPHx?utm_source=generator&theme=0" width="80%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    
+        <button id="info" onclick="showInfo()">?</button>
+    </div>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6mK7khN1QbV61id4JXTij7?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <script src="script.js"></script>
 </body>
 </html>
