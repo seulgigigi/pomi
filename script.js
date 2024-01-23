@@ -1,21 +1,62 @@
+// script.js
+
 let timer;
 let minutes = 25;
 let seconds = 0;
 let isWorking = true;
 let isRunning = false;
 
+const studyDurationInput = document.getElementById('study-duration');
+const breakDurationInput = document.getElementById('break-duration');
 const ringSound = new Audio('meow.mp3');
+
+// Preload the audio
+ringSound.preload = 'auto';
+ringSound.load();
 
 function updateDisplay() {
     document.getElementById('timer').innerText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function playAlarm() {
+    ringSound.play()
+        .then(() => {
+            console.log('Alarm played successfully');
+        })
+        .catch(error => {
+            console.error('Error playing alarm:', error);
+        });
+}
+
+function showModal(message) {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+        <div id="modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #000;">
+            <p>${message}</p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.parentNode.removeChild(modal);
+
+    // Stop the alarm when the modal is closed
+    ringSound.pause();
+    ringSound.currentTime = 0;
+
+    // Start the timer after the modal is closed
+    startTimer();
 }
 
 function startTimer() {
     if (!isRunning) {
         isRunning = true;
 
-        const studyDuration = parseInt(document.getElementById('study-duration').value, 10) || 25;
-        const breakDuration = parseInt(document.getElementById('break-duration').value, 10) || 5;
+        const studyDuration = parseInt(studyDurationInput.value, 10) || 25;
+        const breakDuration = parseInt(breakDurationInput.value, 10) || 5;
 
         minutes = isWorking ? studyDuration : breakDuration;
 
@@ -29,17 +70,19 @@ function startTimer() {
                 clearInterval(timer);
                 isRunning = false;
 
+                // Play the alarm and show the modal when the timer ends
+                playAlarm();
+                showModal(isWorking ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
+
                 if (isWorking) {
-                    alert('Study session completed! Take a break.');
                     isWorking = false;
                     minutes = breakDuration; // Set break duration
                 } else {
-                    alert('Break completed! Back to study.');
                     isWorking = true;
                     minutes = studyDuration; // Set study duration
                 }
 
-                startTimer(); // Start the next session
+                // Don't start the timer here to allow the user to see the modal before the timer starts
             }
 
             updateDisplay();
@@ -51,14 +94,21 @@ function resetTimer() {
     clearInterval(timer);
     isRunning = false;
     isWorking = true;
-    minutes = parseInt(document.getElementById('study-duration').value, 10) || 25; // Set initial duration based on the study session
+    minutes = parseInt(studyDurationInput.value, 10) || 25; // Set initial duration based on the study session
     seconds = 0;
+
+    // Stop the alarm when a new timer starts
+    ringSound.pause();
+    ringSound.currentTime = 0;
+
     updateDisplay();
 }
+
 function showInfo() {
-    const infoMessage = `The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length,separated by short breaks. These intervals are known as "pomodoros," the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.`;
+    const infoMessage = `The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. These intervals are known as "pomodoros," the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.`;
 
     alert(infoMessage);
 }
+
 // Initial display
 updateDisplay();
