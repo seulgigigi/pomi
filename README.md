@@ -1,2 +1,2 @@
-# pomi
-simple pomodoro timer with a music playlist
+# pomiii
+simple pomodoro timer with lofi music playlist
