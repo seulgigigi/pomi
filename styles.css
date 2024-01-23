@@ -53,3 +53,14 @@ body {
     background-position: center;
     background-repeat: no-repeat; 
 }
+
+@media (max-width: 768px) {
+    .timer-container {
+        margin-bottom: 20px;
+    }
+
+    #timer {
+        font-size: 4.5em;
+        margin-top: 20px;
+    }
+}
