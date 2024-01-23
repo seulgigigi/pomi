@@ -4,6 +4,8 @@ let seconds = 0;
 let isWorking = true;
 let isRunning = false;
 
+const ringSound = new Audio('meow.mp3');
+
 function updateDisplay() {
     document.getElementById('timer').innerText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
@@ -54,11 +56,7 @@ function resetTimer() {
     updateDisplay();
 }
 function showInfo() {
-    const infoMessage = `The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. 
-                        The technique uses a timer to break down work into intervals, traditionally 25 minutes in length,
-                        separated by short breaks. These intervals are known as "pomodoros," the plural in English of
-                        the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as
-                        a university student.`;
+    const infoMessage = `The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length,separated by short breaks. These intervals are known as "pomodoros," the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.`;
 
     alert(infoMessage);
 }
