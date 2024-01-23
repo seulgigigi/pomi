@@ -1,2 +1,2 @@
 # pomi
-pomodoro timer test
+simple pomodoro timer with a music playlist
