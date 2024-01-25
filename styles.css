@@ -12,7 +12,7 @@ header {
     text-align: center;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .title {
@@ -20,7 +20,7 @@ header {
     width: 100%;
     height: auto;
     color: #000;
-    margin-bottom: 5px; 
+    margin-bottom: 1px; 
 }
 
 .timer-container {
@@ -28,7 +28,7 @@ header {
     width: 100%;
     height: auto;
     color: #000; 
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #timer {
@@ -59,7 +59,53 @@ body {
     background-image: url('OIG.jpeg');
     width: 100%;
     height: auto;
-    background-size: 300px 300px; 
+    background-size: 400px 400px; 
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat; 
+    margin: 0;
+}
+
+.todo-container {   
+    text-align: center;
+    margin-top: 20px;
+}
+
+input {
+    padding: 8px;
+    margin-right: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    background-color: #ca7373;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
