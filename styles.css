@@ -10,23 +10,31 @@ body {
 
 header {
     text-align: center;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
 .title {
     font-size: 2em;
+    width: 100%;
+    height: auto;
     color: #000;
     margin-bottom: 5px; 
 }
 
 .timer-container {
     text-align: center;
+    width: 100%;
+    height: auto;
     color: #000; 
     margin-bottom: 40px;
 }
 
 #timer {
     font-size: 6.5em;
+    width: 100%;
+    height: auto;
     color: #000; 
     margin-top: 40px;
 }
@@ -49,7 +57,9 @@ button:hover {
 
 body {
     background-image: url('OIG.jpeg');
-    background-size: 350px 350px; 
+    width: 100%;
+    height: auto;
+    background-size: 300px 300px; 
     background-position: center;
     background-repeat: no-repeat; 
 }
