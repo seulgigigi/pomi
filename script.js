@@ -1,10 +1,10 @@
-// script.js
 
 let timer;
 let minutes = 25;
 let seconds = 0;
 let isWorking = true;
 let isRunning = false;
+let totalStudyTime = 0;
 
 const studyDurationInput = document.getElementById('study-duration');
 const breakDurationInput = document.getElementById('break-duration');
@@ -70,8 +70,9 @@ function startTimer() {
                 clearInterval(timer);
                 isRunning = false;
 
-                // Play the alarm and show the modal when the timer ends
+                // Play the alarm, update the study tracker, and show the modal when the timer ends
                 playAlarm();
+                updateStudyTracker(); // Call the function to update the study tracker
                 showModal(isWorking ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
 
                 if (isWorking) {
@@ -88,6 +89,12 @@ function startTimer() {
             updateDisplay();
         }, 1000);
     }
+}
+
+function testUpdateStudyTracker() {
+    // This function simulates updating the study tracker with 2 hours of study time.
+    totalStudyTime = 2 * 3600; // 2 hours in seconds
+    updateStudyTracker();
 }
 
 function resetTimer() {
@@ -129,6 +136,16 @@ function removeTodo(button) {
     const listItem = button.parentNode;
     document.getElementById('todoList').removeChild(listItem);
 }
+function updateStudyTracker() {
+    const studyTracker = document.getElementById('study-tracker');
+    totalStudyTime += isWorking ? parseInt(studyDurationInput.value, 10) : parseInt(breakDurationInput.value, 10);
+    const totalHours = totalStudyTime / 3600; // Convert total seconds to hours
+    studyTracker.innerText = `Total Time: ${formatHours(totalHours)}`;
+}
 
-// Initial display
+function formatHours(hours) {
+    const roundedHours = Math.round(hours * 100) / 100; // Round to two decimal places
+    return `${roundedHours} hours`;
+}
 updateDisplay();
+
