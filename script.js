@@ -1,3 +1,4 @@
+// script.js
 
 let timer;
 let minutes = 25;
@@ -5,6 +6,7 @@ let seconds = 0;
 let isWorking = true;
 let isRunning = false;
 let totalStudyTime = 0;
+let sessionStartTime;
 
 const studyDurationInput = document.getElementById('study-duration');
 const breakDurationInput = document.getElementById('break-duration');
@@ -54,6 +56,7 @@ function closeModal() {
 function startTimer() {
     if (!isRunning) {
         isRunning = true;
+        sessionStartTime = new Date().getTime(); // Record the session start time
 
         const studyDuration = parseInt(studyDurationInput.value, 10) || 25;
         const breakDuration = parseInt(breakDurationInput.value, 10) || 5;
@@ -136,9 +139,14 @@ function removeTodo(button) {
     const listItem = button.parentNode;
     document.getElementById('todoList').removeChild(listItem);
 }
+
 function updateStudyTracker() {
     const studyTracker = document.getElementById('study-tracker');
-    totalStudyTime += isWorking ? parseInt(studyDurationInput.value, 10) : parseInt(breakDurationInput.value, 10);
+
+    // Calculate the time spent during the current session
+    const sessionDuration = (new Date().getTime() - sessionStartTime) / 1000;
+
+    totalStudyTime += isWorking ? sessionDuration : 0; // Add the session duration only for study sessions
     const totalHours = totalStudyTime / 3600; // Convert total seconds to hours
     studyTracker.innerText = `Total Time: ${formatHours(totalHours)}`;
 }
@@ -147,5 +155,6 @@ function formatHours(hours) {
     const roundedHours = Math.round(hours * 100) / 100; // Round to two decimal places
     return `${roundedHours} hours`;
 }
-updateDisplay();
 
+// Initial display
+updateDisplay();
