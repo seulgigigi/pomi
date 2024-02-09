@@ -155,5 +155,17 @@ function formatHours(hours) {
     return `${roundedHours} hours`;
 }
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
+
 // Initial display
 updateDisplay();
