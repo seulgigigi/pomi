@@ -1,11 +1,11 @@
 const cacheName = 'your-app-cache-v1';
 const filesToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  'OIG.jpeg',
-  // Add other files and assets to cache
+    '/',
+    '/index.html',
+    '/styles.css',
+    '/script.js',
+    '/OIG.jpeg',
+    'meow.mp3'
 ];
 
 self.addEventListener('install', (e) => {
