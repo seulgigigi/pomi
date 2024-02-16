@@ -1,4 +1,3 @@
-
 let timer;
 let minutes = 25;
 let seconds = 0;
@@ -23,6 +22,7 @@ function playAlarm() {
     ringSound.play()
         .then(() => {
             console.log('Alarm played successfully');
+            showModal(isWorking ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
         })
         .catch(error => {
             console.error('Error playing alarm:', error);
@@ -32,8 +32,9 @@ function playAlarm() {
 function showModal(message) {
     const modal = document.createElement('div');
     modal.innerHTML = `
-        <div id="modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #000;">
+        <div id="modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #000; text-align: center; z-index: 9999;">
             <p>${message}</p>
+            <img src="meow.jpeg" alt="Image" style="max-width: 100%; max-height: 200px; margin-bottom: 10px;">
             <button onclick="closeModal()">OK</button>
         </div>
     `;
@@ -156,7 +157,7 @@ function formatHours(hours) {
 }
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+    window.addEventListener('load', () => { 
         navigator.serviceWorker.register('service.js')
             .then((registration) => {
                 console.log('Service Worker registered with scope:', registration.scope);
