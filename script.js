@@ -79,25 +79,19 @@ function startTimer() {
                 updateStudyTracker();
 
                 // Show the modal with the appropriate message
-                if (isWorking) {
-                    showModal(isFirstBreak ? 'Take a break! Study session completed.' : 'Back to study! Break completed.');
-                } else {
-                    showModal(isFirstBreak ? 'Back to study! Break completed.' : 'Take a break! Study session completed.');
-                }
-
-                isFirstBreak = !isFirstBreak; // Toggle between study and break sessions
+                showModal('Timer has run out!');
 
                 // Reset the timer based on the next session type
                 isWorking = !isWorking;
                 minutes = isWorking ? studyDuration : breakDuration;
-
-                // Don't start the timer here to allow the user to see the modal before the timer starts
             }
 
             updateDisplay();
         }, 1000);
     }
 }
+
+
 function testUpdateStudyTracker() {
     // This function simulates updating the study tracker with 2 hours of study time.
     totalStudyTime = 2 * 3600; // 2 hours in seconds
