@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+
     let timer;
     let minutes = 25;
     let seconds = 0;
@@ -176,4 +176,4 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Initial display
     updateDisplay();
-});
+
