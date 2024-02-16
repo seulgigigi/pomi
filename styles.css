@@ -81,6 +81,14 @@ body {
     border: #000 dashed;
 }
 
+#study-duration{
+    width: 200px;
+}
+#break-duration{
+    max-width: 200px;
+
+}
+
 input {
     padding: 8px;
     margin-right: 8px;
