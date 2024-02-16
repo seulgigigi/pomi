@@ -5,7 +5,7 @@ let isWorking = true;
 let isRunning = false;
 let totalStudyTime = 0;
 let sessionStartTime;
-let isFirstBreak = true; // Corrected variable name and set to true initially
+let isFirstBreak = true; // Corrected variable name
 
 const studyDurationInput = document.getElementById('study-duration');
 const breakDurationInput = document.getElementById('break-duration');
@@ -23,7 +23,7 @@ function playAlarm() {
     ringSound.play()
         .then(() => {
             console.log('Alarm played successfully');
-            showModal(isWorking ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
+            showModal('Timer has run out!');
         })
         .catch(error => {
             console.error('Error playing alarm:', error);
@@ -78,9 +78,6 @@ function startTimer() {
                 playAlarm();
                 updateStudyTracker();
 
-                // Show the modal with the appropriate message
-                showModal('Timer has run out!');
-
                 // Reset the timer based on the next session type
                 isWorking = !isWorking;
                 minutes = isWorking ? studyDuration : breakDuration;
@@ -90,7 +87,6 @@ function startTimer() {
         }, 1000);
     }
 }
-
 
 function testUpdateStudyTracker() {
     // This function simulates updating the study tracker with 2 hours of study time.
