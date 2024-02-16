@@ -58,12 +58,14 @@ button:hover {
 body {
     background-image: url('OIG.jpeg');
     width: 100%;
-    height: auto;
-    background-size: 300px 300px; 
+    height: 100vh; /* Adjusted to full viewport height */
+    background-size: 300px 300px; /* Adjusted to cover the entire viewport */
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat; 
-    margin:0;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative; /* Required for z-index */
+    z-index: -1; /* Set a negative z-index to keep the background behind other content */
 }
 
 .todo-container {   
@@ -83,10 +85,12 @@ body {
 
 #study-duration{
     width: 200px;
+    align-items: center;
 }
 #break-duration{
-    max-width: 200px;
-
+    width: 200px;
+    align-items: center;
+    margin-top: -10px;
 }
 
 input {
