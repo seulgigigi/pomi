@@ -176,3 +176,5 @@ if ('serviceWorker' in navigator) {
 
 // Initial display
 updateDisplay();
+});
+
