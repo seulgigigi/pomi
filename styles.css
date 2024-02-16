@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #ffffff; 
-}   
+}
 
 header {
     text-align: center;
@@ -29,7 +29,6 @@ header {
     width: 100%;
     height: auto;
     color: #000; 
-    margin-bottom: 20px;
 }
 
 #timer {
@@ -69,12 +68,24 @@ body {
 
 .todo-container {   
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 4px; /* Uniform border radius */
+}
+
+.todo-container h2 {
+    background-color: #ffffff; /* Set background color to white */
+    padding: 8px 16px; /* Add padding for spacing */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    margin-bottom: 10px; /* Add margin to separate from the list */
+    border: #000 dashed;
 }
 
 input {
     padding: 8px;
     margin-right: 8px;
+    border: 2px solid #000; /* Uniform border */
+    border-radius: 4px; /* Uniform border radius */
 }
 
 button {
@@ -82,8 +93,8 @@ button {
     cursor: pointer;
     background-color: #ffffff;
     color: #000000;
-    border: 2px solid #000;
-    border-radius: 4px;
+    border: 2px solid #000; /* Uniform border */
+    border-radius: 4px; /* Uniform border radius */
 }
 
 ul {
@@ -96,7 +107,7 @@ li {
     margin: 8px 0;
     padding: 8px;
     border-radius: 4px;
-    border: 2px solid #000;
+    border: 2px solid #000; /* Uniform border */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,8 +116,28 @@ li {
 li button {
     background-color: #ca7373;
     color: #fff;
-    border: 2px solid #000;
+    border: 2px solid #000; /* Uniform border */
     padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .timer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #timer {
+        margin-top: 20px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    #break-duration {
+        margin-top: 8px; /* Add margin to separate from study duration */
+    }
 }
