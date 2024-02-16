@@ -5,6 +5,7 @@ let isWorking = true;
 let isRunning = false;
 let totalStudyTime = 0;
 let sessionStartTime;
+let isFirstBreak = true; 
 
 const studyDurationInput = document.getElementById('study-duration');
 const breakDurationInput = document.getElementById('break-duration');
@@ -73,18 +74,21 @@ function startTimer() {
                 clearInterval(timer);
                 isRunning = false;
 
-                // Play the alarm, update the study tracker, and show the modal when the timer ends
+                // Play the alarm and update the study tracker
                 playAlarm();
-                updateStudyTracker(); // Call the function to update the study tracker
-                showModal(isWorking ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
+                updateStudyTracker();
 
+                // Show the modal with the appropriate message
                 if (isWorking) {
-                    isWorking = false;
-                    minutes = breakDuration; // Set break duration
+                    showModal(isFirstBreak ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
+                    isFirstBreak = false; // Reset isFirstBreak to false after the first break
                 } else {
-                    isWorking = true;
-                    minutes = studyDuration; // Set study duration
+                    showModal('Break completed! Back to study.');
                 }
+
+                // Toggle between study and break sessions
+                isWorking = !isWorking;
+                minutes = isWorking ? studyDuration : breakDuration;
 
                 // Don't start the timer here to allow the user to see the modal before the timer starts
             }
