@@ -8,35 +8,50 @@ body {
     background-color: #ffffff; 
 }
 
+body {
+    background-image: url('OIG.jpeg');
+    width: 100%;
+    height: 100vh; /* Adjusted to full viewport height */
+    margin-bottom: 50px;
+    background-size: 300px 300px; /* Adjusted to cover the entire viewport */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative; /* Required for z-index */
+    z-index: -1; /* Set a negative z-index to keep the background behind other content */
+}
+
 header {
     text-align: center;
     width: 100%;
-    height: auto;
-    margin-bottom: 0px;
-    padding: 1px;
+    padding: 10px;
 }
 
 .title {
     font-size: 2em;
-    width: 100%;
-    height: auto;
     color: #000;
-    margin-bottom: 1px; 
+    margin-bottom: 5px; 
 }
 
 .timer-container {
     text-align: center;
     width: 100%;
-    height: auto;
-    color: #000; 
+    margin-top: 20px;
 }
 
 #timer {
     font-size: 6.5em;
-    width: 100%;
-    height: auto;
     color: #000; 
     margin-top: 40px;
+}
+
+input[type="number"] {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
 }
 
 button {
@@ -55,58 +70,19 @@ button:hover {
     color: #fff; 
 }
 
-body {
-    background-image: url('OIG.jpeg');
-    width: 100%;
-    height: 100vh; /* Adjusted to full viewport height */
-    background-size: 300px 300px; /* Adjusted to cover the entire viewport */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    position: relative; /* Required for z-index */
-    z-index: -1; /* Set a negative z-index to keep the background behind other content */
-}
-
 .todo-container {   
     text-align: center;
     margin-top: 30px;
     padding: 10px;
-    border-radius: 4px; /* Uniform border radius */
+    border-radius: 4px; 
 }
 
 .todo-container h2 {
-    background-color: #ffffff; /* Set background color to white */
-    padding: 8px 16px; /* Add padding for spacing */
-    border-radius: 4px; /* Add border radius for rounded corners */
-    margin-bottom: 10px; /* Add margin to separate from the list */
-    border: #000 dashed;
-}
-
-#study-duration{
-    width: 200px;
-    align-items: center;
-}
-#break-duration{
-    width: 200px;
-    align-items: center;
-    margin-top: -10px;
-}
-
-input {
-    padding: 8px;
-    margin-right: 8px;
-    border: 2px solid #000; /* Uniform border */
-    border-radius: 4px; /* Uniform border radius */
-}
-
-button {
-    padding: 8px 16px;
-    cursor: pointer;
     background-color: #ffffff;
-    color: #000000;
-    border: 2px solid #000; /* Uniform border */
-    border-radius: 4px; /* Uniform border radius */
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 2px dashed #000;
 }
 
 ul {
@@ -119,7 +95,7 @@ li {
     margin: 8px 0;
     padding: 8px;
     border-radius: 4px;
-    border: 2px solid #000; /* Uniform border */
+    border: 2px solid #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,28 +104,23 @@ li {
 li button {
     background-color: #ca7373;
     color: #fff;
-    border: 2px solid #000; /* Uniform border */
+    border: 2px solid #000;
     padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
 }
 
+/* Responsive styles */
 @media only screen and (max-width: 600px) {
-    .timer-container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
     #timer {
         margin-top: 20px;
     }
 
-    label {
-        margin-top: 20px;
+    input[type="number"] {
+        width: 100px;
     }
 
-    #break-duration {
-        margin-top: 8px; /* Add margin to separate from study duration */
+    .timer-container {
+        margin-top: 10px;
     }
 }
