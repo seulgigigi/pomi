@@ -9,31 +9,40 @@
 </head>
 <body>
     <header>
+        <iframe style="border-radius:8px" src="https://open.spotify.com/embed/playlist/6mK7khN1QbV61id4JXTij7?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <h1 class="title">Pomi Timer</h1>
         <p class="subtitle">Presented by Group 1</p>
         <p id="study-tracker">Total Time: 0 hours</p>   
     </header>
-    <div class="timer-container">
-        <label for="study-duration">Study Duration (mins):</label>
-        <input type="number" id="study-duration" value="25" min="1">
+    <div class="container">
+        <div class="input-container">
+            <label for="study-duration">Study Duration (minutes):</label>
+            <input type="number" id="study-duration" value="25" min="1">
+        </div>
+        <div class="input-container">
+            <label for="break-duration">Break Duration (minutes):</label>
+            <input type="number" id="break-duration" value="5" min="1">
+        </div>
 
-        <label for="break-duration">Break Duration (mins):</label>
-        <input type="number" id="break-duration" value="5" min="1">
-
-        <h1 id="timer">25:00</h1>
-        <button id="start" onclick="startTimer()">Start</button>
-        <button id="reset" onclick="resetTimer()">Reset</button>
-
-        <button id="info" onclick="showInfo()">?</button>
+        <div class="timer-container">
+            <h1 id="timer">25:00</h1>
+            <div class="buttons">
+                <button id="start" onclick="startTimer()">Start</button>
+                <button id="reset" onclick="resetTimer()">Reset</button>
+                <button id="info" onclick="showInfo()">?</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-<div class="todo-container">
-    <h2>To-Do List</h2>
-    <input type="text" id="newTodo" placeholder="Add a new task">
-    <button onclick="addTodo()">Add</button>
-    <ul id="todoList"></ul>
-</div>
-<script src="script.js"></script>
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+        <input type="text" id="newTodo" placeholder="Add a new task">
+        <button onclick="addTodo()">Add</button>
+        <ul id="todoList"></ul>
+    </div>
+    
+    <script src="script.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -46,7 +55,5 @@
                 });
         }
     </script>
-     <iframe style="border-radius:8px" src="https://open.spotify.com/embed/playlist/6mK7khN1QbV61id4JXTij7?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-     <script src="script.js"></script>
 </body>
 </html>
