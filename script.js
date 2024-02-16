@@ -80,13 +80,14 @@ function startTimer() {
 
                 // Show the modal with the appropriate message
                 if (isWorking) {
-                    showModal(isFirstBreak ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
-                    isFirstBreak = false; // Reset isFirstBreak to false after the first break
+                    showModal(isFirstSession ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
                 } else {
-                    showModal('Break completed! Back to study.');
+                    showModal(isFirstSession ? 'Break completed! Back to study.' : 'Study session completed! Take a break.');
                 }
 
-                // Toggle between study and break sessions
+                isFirstSession = !isFirstSession; // Toggle between study and break sessions
+
+                // Reset the timer based on the next session type
                 isWorking = !isWorking;
                 minutes = isWorking ? studyDuration : breakDuration;
 
