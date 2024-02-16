@@ -80,9 +80,9 @@ function startTimer() {
 
                 // Show the modal with the appropriate message
                 if (isWorking) {
-                    showModal(isFirstBreak ? 'Study session completed! Take a break.' : 'Break completed! Back to study.');
+                    showModal(isFirstBreak ? 'Take a break! Study session completed.' : 'Back to study! Break completed.');
                 } else {
-                    showModal(isFirstBreak ? 'Break completed! Back to study.' : 'Study session completed! Take a break.');
+                    showModal(isFirstBreak ? 'Back to study! Break completed.' : 'Take a break! Study session completed.');
                 }
 
                 isFirstBreak = !isFirstBreak; // Toggle between study and break sessions
@@ -98,7 +98,6 @@ function startTimer() {
         }, 1000);
     }
 }
-
 function testUpdateStudyTracker() {
     // This function simulates updating the study tracker with 2 hours of study time.
     totalStudyTime = 2 * 3600; // 2 hours in seconds
