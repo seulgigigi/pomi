@@ -1,37 +1,43 @@
+*{
+    font-family: monospace;
+    margin-left: 1px;
+
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
-    height: 100vh;
+    min-height: 100vh; /* Change height to min-height */
     margin: 0;
-    background-color: #ffffff; 
-}
-
-body {
-    background-image: url('OIG.jpeg');
+    background-color: #fcf6e4; 
     width: 100%;
-    height: 100vh; /* Adjusted to full viewport height */
-    margin-bottom: 50px;
-    background-size: 300px 300px; /* Adjusted to cover the entire viewport */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    position: relative; /* Required for z-index */
-    z-index: -1; /* Set a negative z-index to keep the background behind other content */
+    height: 100%;
 }
 
+iframe{
+    max-width: 95%;
+    max-height: 100%;
+    margin-top: 50px; 
+}
 header {
     text-align: center;
     width: 100%;
     padding: 10px;
+    background-color: rgb(240, 240, 208);
+    padding: 2px;
+}
+
+img {
+    size: 20px 20px;
 }
 
 .title {
     font-size: 2em;
     color: #000;
     margin-bottom: 5px; 
+    text-emphasis-style: bold;
 }
 
 .timer-container {
@@ -40,18 +46,30 @@ header {
     margin-top: 20px;
 }
 
+.input-container{
+    text-align: center;
+}
+
 #timer {
-    font-size: 6.5em;
+    font-size: 9em;
+    width: 100%;
+    height: 100%;
     color: #000; 
     margin-top: 40px;
 }
 
 input[type="number"] {
-    width: 200px;
+    width: 80%; /* Adjust width to be responsive */
+    max-width: 200px; /* Set maximum width */
     padding: 8px;
     margin-bottom: 10px;
     border: 2px solid #000;
     border-radius: 4px;
+}
+
+.buttons{
+    margin-top: -50px;
+    margin-bottom: 30px;
 }
 
 button {
@@ -72,9 +90,11 @@ button:hover {
 
 .todo-container {   
     text-align: center;
-    margin-top: 30px;
     padding: 10px;
     border-radius: 4px; 
+    background-color: #dfe2c2;
+    width: 70%;
+
 }
 
 .todo-container h2 {
@@ -82,7 +102,7 @@ button:hover {
     padding: 8px 16px;
     border-radius: 4px;
     margin-bottom: 10px;
-    border: 2px dashed #000;
+    border: 2px solid #000;
 }
 
 ul {
@@ -110,17 +130,6 @@ li button {
     cursor: pointer;
 }
 
-/* Responsive styles */
-@media only screen and (max-width: 600px) {
-    #timer {
-        margin-top: 20px;
-    }
-
-    input[type="number"] {
-        width: 100px;
-    }
-
-    .timer-container {
-        margin-top: 10px;
-    }
+faq{
+    font-size: 130%;
 }
