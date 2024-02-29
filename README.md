@@ -1,4 +1,4 @@
-# pomiii
+# pomi
 *The Pomi Timer is a productivity tool based on the Pomodoro Technique, which helps users manage their time effectively by breaking work into intervals (usually 25 minutes) separated by short breaks.
 
 *How to Use the Timer:
