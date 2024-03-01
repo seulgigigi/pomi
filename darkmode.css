@@ -106,6 +106,8 @@
     margin-top: 20px;
     background-color: #333333;
     border-radius: 15px;
+    max-height: 360px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
 }
 
 .dark-mode .todo-container h2 {
