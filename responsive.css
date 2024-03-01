@@ -1,0 +1,61 @@
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack items vertically for mobile view */
+    }
+
+    .timer-container,
+    .todo-container {
+        width: 100%; /* Adjust width for mobile screens */
+    }
+
+    .todo-container {
+        margin-top: 20px; /* Adjust margin to separate timer and todo for mobile view */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .todo-container {   
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #dfe2c2;
+        border-radius: 8px;
+    }
+
+    /* Add these styles for the todo container's title */
+    .todo-container h2 {
+        background-color: #ffffff;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+    }
+
+    /* Add these styles for todo items in the list */
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background-color: #ffffff;
+        margin: 8px 0;
+        padding: 8px;
+        border-radius: 4px;
+        border: 2px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li button {
+        background-color: #ca7373;
+        color: #fff;
+        border: 2px solid #000;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+}

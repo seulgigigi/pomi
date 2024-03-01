@@ -1,10 +1,109 @@
-let timer,minutes=25,seconds=0,isWorking=!0,isRunning=!1,totalStudyTime=0,sessionStartTime,isFirstBreak=!0;const studyDurationInput=document.getElementById("study-duration"),breakDurationInput=document.getElementById("break-duration"),ringSound=new Audio("meow.mp3");function updateDisplay(){document.getElementById("timer").innerText=`${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`}function playAlarm(){ringSound.play().then(()=>{console.log("Alarm played successfully"),showModal("Timer has run out!"),"Notification"in window&&"granted"===Notification.permission&&new Notification("Pomi Timer",{body:"Timer has run out!",icon:""})}).catch(e=>{console.error("Error playing alarm:",e)})}function showModal(e){let t=document.createElement("div");t.innerHTML=`
-            <div id="modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #000; text-align: center; z-index: 9999;">
-                <p>${e}</p>
-                <img src="meow.jpeg" alt="Image" style="max-width: 100%; max-height: 200px; margin-bottom: 10px;">
-                <button onclick="closeModal()">OK</button>
-            </div>
-        `,document.body.appendChild(t)}function closeModal(){let e=document.getElementById("modal");e.parentNode.removeChild(e),ringSound.pause(),ringSound.currentTime=0,startTimer()}function startTimer(){if(!isRunning){isRunning=!0,sessionStartTime=new Date().getTime();let e=parseInt(studyDurationInput.value,10)||25,t=parseInt(breakDurationInput.value,10)||5;minutes=isWorking?e:t,timer=setInterval(function(){seconds>0?seconds--:minutes>0?(minutes--,seconds=59):(clearInterval(timer),isRunning=!1,playAlarm(),updateStudyTracker(),showModal("Timer has run out!"),minutes=(isWorking=!isWorking)?e:t),updateDisplay()},1e3)}}function testUpdateStudyTracker(){totalStudyTime=7200,updateStudyTracker()}function resetTimer(){clearInterval(timer),isRunning=!1,isWorking=!0,minutes=parseInt(studyDurationInput.value,10)||25,seconds=0,ringSound.pause(),ringSound.currentTime=0,updateDisplay()}function showInfo(){alert('The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. These intervals are known as "pomodoros," the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.')}function addTodo(){let e=document.getElementById("newTodo").value.trim();if(""!==e){let t=document.createElement("li");t.innerHTML=`
-                <span>${e}</span>
-                <button onclick="removeTodo(this)">Remove</button>
-            `,document.getElementById("todoList").appendChild(t),document.getElementById("newTodo").value=""}}function removeTodo(e){let t=e.parentNode;document.getElementById("todoList").removeChild(t)}function updateStudyTracker(){let e=document.getElementById("study-tracker"),t=(new Date().getTime()-sessionStartTime)/1e3;totalStudyTime+=isWorking?t:0;let n=totalStudyTime/3600;e.innerText=`Total Time: ${formatHours(n)}`}function formatHours(e){return`${Math.round(100*e)/100} hours`}function requestNotificationPermission(){"Notification"in window&&Notification.requestPermission().then(e=>{console.log("Notification permission status:",e)}).catch(e=>{console.error("Error requesting notification permission:",e)})}ringSound.preload="auto",ringSound.load(),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("service.js").then(e=>{console.log("Service Worker registered with scope:",e.scope)}).catch(e=>{console.error("Service Worker registration failed:",e)})}),updateDisplay();
+let timer;
+let minutes = 25;
+let seconds = 0;
+let isWorking = true;
+let isRunning = false;
+let totalStudyTime = 0;
+let sessionStartTime;
+
+const studyDurationInput = document.getElementById('study-duration');
+const breakDurationInput = document.getElementById('break-duration');
+
+function updateDisplay() {
+    document.getElementById('timer').innerText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function playAlarm() {
+    new Audio('meow.mp3').play()
+        .then(() => {
+            showModal(isWorking ? 'Timer has run out!' : 'Timer has run out!');
+            if ('Notification' in window && Notification.permission === 'granted') {
+                const options = { body: isWorking ? 'Timer has run out!' : 'Timer has run out!' };
+                new Notification('Pomi Timer', options);
+            }
+        })
+        .catch(error => {
+            console.error('Error playing alarm:', error);
+        });
+}
+
+function showModal(message) {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+        <div id="modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #000; text-align: center; z-index: 9999;">
+            <p>${message}</p>
+            <img src="meow.jpeg" alt="Image" style="max-width: 100%; max-height: 200px; margin-bottom: 10px;">
+            <button onclick="closeModal()">OK</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) modal.parentNode.removeChild(modal);
+    new Audio('meow.mp3').pause();
+    new Audio('meow.mp3').currentTime = 0;
+    startTimer();
+}
+
+function startTimer() {
+    if (!isRunning) {
+        isRunning = true;
+        sessionStartTime = new Date().getTime();
+        const studyDuration = parseInt(studyDurationInput.value, 10) || 25;
+        const breakDuration = parseInt(breakDurationInput.value, 10) || 5;
+        minutes = isWorking ? studyDuration : breakDuration;
+        timer = setInterval(function () {
+            if (seconds > 0) {
+                seconds--;
+            } else if (minutes > 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                clearInterval(timer);
+                isRunning = false;
+                playAlarm();
+                updateStudyTracker();
+                showModal('Timer has run out!');
+                isWorking = !isWorking;
+                minutes = isWorking ? studyDuration : breakDuration;
+            }
+            updateDisplay();
+        }, 1000);
+    }
+}
+
+function resetTimer() {
+    clearInterval(timer);
+    isRunning = false;
+    isWorking = true;
+    minutes = parseInt(studyDurationInput.value, 10) || 25;
+    seconds = 0;
+    new Audio('meow.mp3').pause();
+    new Audio('meow.mp3').currentTime = 0;
+    updateDisplay();
+}
+
+function updateStudyTracker() {
+    const studyTracker = document.getElementById('study-tracker');
+    const sessionDuration = (new Date().getTime() - sessionStartTime) / 1000;
+    totalStudyTime += isWorking ? sessionDuration : 0;
+    const totalHours = totalStudyTime / 3600;
+    studyTracker.innerText = `Total Time: ${formatHours(totalHours)}`;
+}
+
+function formatHours(hours) {
+    const roundedHours = Math.round(hours * 100) / 100;
+    return `${roundedHours} hours`;
+}
+
+function requestNotificationPermission() {
+    if ('Notification' in window) {
+        Notification.requestPermission()
+            .then(permission => console.log('Notification permission status:', permission))
+            .catch(error => console.error('Error requesting notification permission:', error));
+    }
+}
+
+updateDisplay();

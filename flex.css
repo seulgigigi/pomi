@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.timer-container {
+    flex-basis: 50%; /* Adjust the width of the timer container */
+}
+
+.todo-container {
+    flex-basis: 50%; /* Adjust the width of the todo container */
+    margin-top: 50px; /* Increase margin to create more space between the timer and todo */
+    margin-left: 50px;
+}

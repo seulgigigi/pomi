@@ -1,7 +1,7 @@
-*{
+/* Apply font and margin to all elements */
+* {
     font-family: monospace;
     margin-left: 1px;
-
 }
 
 body {
@@ -16,21 +16,18 @@ body {
     height: 100%;
 }
 
-iframe{
+iframe {
     max-width: 95%;
     max-height: 100%;
     margin-top: 50px; 
 }
+
 header {
     text-align: center;
     width: 100%;
     padding: 10px;
     background-color: rgb(240, 240, 208);
     padding: 2px;
-}
-
-img {
-    size: 20px 20px;
 }
 
 .title {
@@ -44,9 +41,11 @@ img {
     text-align: center;
     width: 100%;
     margin-top: 20px;
+    background-color: #dfe2c2;
+    border-radius: 8px; 
 }
 
-.input-container{
+.input-container {
     text-align: center;
 }
 
@@ -67,7 +66,7 @@ input[type="number"] {
     border-radius: 4px;
 }
 
-.buttons{
+.buttons {
     margin-top: -50px;
     margin-bottom: 30px;
 }
@@ -88,23 +87,28 @@ button:hover {
     color: #fff; 
 }
 
+/* Add these styles to define the todo container */
 .todo-container {   
     text-align: center;
-    padding: 10px;
-    border-radius: 4px; 
+    width: 100%;
+    margin-top: 20px;
     background-color: #dfe2c2;
-    width: 70%;
-
+    border-radius: 8px;
 }
 
+h2{
+    font-size: 200%;
+}
+
+/* Add these styles for the todo container's title */
 .todo-container h2 {
-    background-color: #ffffff;
+    background-color: #dfe2c2;
     padding: 8px 16px;
     border-radius: 4px;
     margin-bottom: 10px;
-    border: 2px solid #000;
 }
 
+/* Add these styles for todo items in the list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -130,6 +134,30 @@ li button {
     cursor: pointer;
 }
 
-faq{
-    font-size: 130%;
+/* Add these styles for the "Add Task" input */
+#newTodo {
+    width: 80%; /* Adjust width to be responsive */
+    max-width: 100px; /* Set maximum width */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+/* Add these styles for the "Add Task" button */
+#addTaskBtn {
+    font-size: 1em;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add these styles for the "Add Task" button hover effect */
+#addTaskBtn:hover {
+    background-color: #000;
+    color: #fff;
 }
