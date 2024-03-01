@@ -5,8 +5,18 @@ const filesToCache = [
     '/styles.css',
     '/script.js',
     '/OIG.jpeg',
-    'meow.mp3',
-    'meow.jpeg',
+    '/meow.mp3',
+    '/meow.jpeg',
+    '/animations.css',
+    '/dark.js',
+    '/darkmode.css',
+    '/fade.js',
+    '/faq.js',
+    '/flex.css',
+    '/manifest.json',
+    '/responsive.css',
+    '/todo.js',
+    '/pwa.jpeg',
 ];
 
 self.addEventListener('install', (e) => {
