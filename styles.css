@@ -181,3 +181,10 @@ li button {
     width: fit-content;
     text-align: center;
 }
+
+
+#darkMode {
+    border: none; /* Remove border */
+    background: transparent; /* Set background to transparent */
+    cursor: pointer; /* Add pointer cursor */
+}

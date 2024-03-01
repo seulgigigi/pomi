@@ -1,3 +1,4 @@
+/* Default light mode styles */
 .container {
     display: flex;
     justify-content: space-between;
@@ -9,6 +10,26 @@
 }
 
 .todo-container {
+    flex-basis: 50%; /* Adjust the width of the todo container */
+    margin-top: 50px; /* Increase margin to create more space between the timer and todo */
+    margin-left: 50px;
+}
+
+/* Dark mode styles */
+body.dark-mode .container {
+    background-color: #2c2c2c; /* Dark mode container background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+}
+
+body.dark-mode .timer-container {
+    background-color: #333333; /* Dark mode timer container background color */
+    flex-basis: 50%;
+}
+
+body.dark-mode .todo-container {
+    background-color: #333333; /* Dark mode todo container background color */
     flex-basis: 50%; /* Adjust the width of the todo container */
     margin-top: 50px; /* Increase margin to create more space between the timer and todo */
     margin-left: 50px;

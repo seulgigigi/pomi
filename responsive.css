@@ -1,24 +1,21 @@
+/* Default light mode styles */
 /* Media query for mobile devices */
 @media screen and (max-width: 600px) {
     .container {
         flex-direction: column; /* Stack items vertically for mobile view */
     }
 
-    .timer-container{
+    .timer-container {
         width: 100%; /* Adjust width for mobile screens */
     }
 
     .todo-container {
         margin-top: 20px; /* Adjust margin to separate timer and todo for mobile view */
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: -30px;
+        width: 100%;
     }
     
     .todo-container {   
         text-align: center;
-        width: 100%;
-        margin-top: 20px;
         background-color: #dfe2c2;
         border-radius: 8px;
     }
@@ -57,15 +54,91 @@
         cursor: pointer;
     }
 
-    iframe{
+    iframe {
         margin-top: 70px;
         width: 98%;
         height: 400px;
         max-width: 100%;
     }
 
-    .tutorial-content h1{
+    .tutorial-content h1 {
         width: fit-content;
         font-size: auto;
+    }
+
+    .tutorial-content{
+        width: 98%;
+    }
+}
+
+/* Dark mode styles */
+@media screen and (max-width: 600px) {
+    body.dark-mode .container {
+        flex-direction: column; /* Stack items vertically for mobile view */
+    }
+
+    body.dark-mode .timer-container {
+        width: 100%; /* Adjust width for mobile screens */
+    }
+
+    body.dark-mode .todo-container {
+        margin-top: 20px; /* Adjust margin to separate timer and todo for mobile view */
+        width: 100%;
+    }
+    
+    body.dark-mode .todo-container {   
+        text-align: center;
+        background-color: #333333; /* Dark mode background color */
+        border-radius: 8px;
+    }
+
+    /* Add these styles for the todo container's title */
+    body.dark-mode .todo-container h2 {
+        background-color: #333333; /* Dark mode background color */
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    /* Add these styles for todo items in the list */
+    body.dark-mode ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    body.dark-mode li {
+        background-color: #121212; /* Dark mode background color */
+        margin: 8px 0;
+        padding: 8px;
+        border-radius: 4px;
+        border: 2px solid #ffffff; /* Dark mode border color */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body.dark-mode li button {
+        background-color: #ca7373;
+        color: #ffffff;
+        border: 2px solid #ffffff; /* Dark mode border color */
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    body.dark-mode iframe {
+        margin-top: 70px;
+        width: 98%;
+        height: 400px;
+        max-width: 100%;
+    }
+
+    body.dark-mode .tutorial-content h1 {
+        width: fit-content;
+        font-size: auto;
+    }
+
+    body.dark-mode .tutorial-content{
+        width: 98%;
     }
 }
