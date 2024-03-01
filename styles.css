@@ -99,6 +99,8 @@ button:hover {
     margin-top: 20px;
     background-color: #dfe2c2;
     border-radius: 15px;
+    max-height: 360px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
 }
 
 h2 {
