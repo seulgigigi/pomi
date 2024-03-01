@@ -17,6 +17,8 @@
         background-color: #dfe2c2;
         border-radius: 8px;
         width: 180%;
+        max-height: 300px; /* Adjust the maximum height as needed */
+        overflow-y: auto; 
     }
 
     /* Add these styles for the todo container's title */
@@ -88,6 +90,8 @@
         background-color: #333333; /* Dark mode background color */
         border-radius: 8px;
         width: 180%;
+        max-height: 300px; /* Adjust the maximum height as needed */
+        overflow-y: auto; 
     }
 
     /* Add these styles for the todo container's title */
