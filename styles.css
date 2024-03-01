@@ -1,4 +1,3 @@
-/* Apply font and margin to all elements */
 * {
     font-family: monospace;
     margin-left: 1px;
@@ -17,9 +16,11 @@ body {
 }
 
 iframe {
-    max-width: 95%;
+    max-width: 100%;
     max-height: 100%;
-    margin-top: 50px; 
+    margin-top: 35px; 
+    width: 80%;
+    height: 200px;
 }
 
 header {
@@ -42,7 +43,12 @@ header {
     width: 100%;
     margin-top: 20px;
     background-color: #dfe2c2;
-    border-radius: 8px; 
+    border-radius: 15px; 
+}
+
+.timer-container h3{
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .input-container {
@@ -69,6 +75,7 @@ input[type="number"] {
 .buttons {
     margin-top: -50px;
     margin-bottom: 30px;
+    border-radius: 8px;
 }
 
 button {
@@ -90,10 +97,10 @@ button:hover {
 /* Add these styles to define the todo container */
 .todo-container {   
     text-align: center;
-    width: 100%;
+    width: 400px;
     margin-top: 20px;
     background-color: #dfe2c2;
-    border-radius: 8px;
+    border-radius: 15px;
 }
 
 h2{
@@ -106,6 +113,8 @@ h2{
     padding: 8px 16px;
     border-radius: 4px;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Add these styles for todo items in the list */
@@ -160,4 +169,15 @@ li button {
 #addTaskBtn:hover {
     background-color: #000;
     color: #fff;
+}
+
+.tutorial-content{
+    width: 85%;
+}
+
+.tutorial-content h1,h2,h3{
+    background-color:#dfe2c2;
+    border-radius: 5px;
+    width: fit-content;
+    text-align: center;
 }

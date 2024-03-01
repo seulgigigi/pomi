@@ -4,8 +4,7 @@
         flex-direction: column; /* Stack items vertically for mobile view */
     }
 
-    .timer-container,
-    .todo-container {
+    .timer-container{
         width: 100%; /* Adjust width for mobile screens */
     }
 
@@ -13,6 +12,7 @@
         margin-top: 20px; /* Adjust margin to separate timer and todo for mobile view */
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: -30px;
     }
     
     .todo-container {   
@@ -25,11 +25,10 @@
 
     /* Add these styles for the todo container's title */
     .todo-container h2 {
-        background-color: #ffffff;
+        background-color: #dfe2c2;
         padding: 8px 16px;
         border-radius: 4px;
         margin-bottom: 10px;
-        border: 2px solid #000;
     }
 
     /* Add these styles for todo items in the list */
@@ -58,4 +57,15 @@
         cursor: pointer;
     }
 
+    iframe{
+        margin-top: 70px;
+        width: 98%;
+        height: 400px;
+        max-width: 100%;
+    }
+
+    .tutorial-content h1{
+        width: fit-content;
+        font-size: auto;
+    }
 }

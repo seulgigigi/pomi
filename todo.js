@@ -1,17 +1,4 @@
-function addTodo() {
-    const task = document.getElementById('newTodo').value.trim();
-    if (task !== '') {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <span>${task}</span>
+function addTodo(){let e=document.getElementById("newTodo").value.trim();if(""!==e){let t=document.createElement("li");t.innerHTML=`
+            <span>${e}</span>
             <button onclick="removeTodo(this)">Remove</button>
-        `;
-        document.getElementById('todoList').appendChild(listItem);
-        document.getElementById('newTodo').value = '';
-    }
-}
-
-function removeTodo(button) {
-    const listItem = button.parentNode;
-    document.getElementById('todoList').removeChild(listItem);
-}
+        `,document.getElementById("todoList").appendChild(t),document.getElementById("newTodo").value=""}}function removeTodo(e){let t=e.parentNode;document.getElementById("todoList").removeChild(t)}

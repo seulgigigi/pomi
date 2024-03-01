@@ -1,6 +1,6 @@
 {
-    "name": "Pomiii Timer",
-    "short_name": "Pomiii",
+    "name": "Pomi Timer",
+    "short_name": "Pomi",
     "description": "Simple Pomodoro Timer with Music",
     "start_url": ".",
     "display": "standalone",
