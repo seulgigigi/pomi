@@ -1,4 +1,1 @@
-function addTodo(){let e=document.getElementById("newTodo").value.trim();if(""!==e){let t=document.createElement("li");t.innerHTML=`
-            <span>${e}</span>
-            <button onclick="removeTodo(this)">Remove</button>
-        `,document.getElementById("todoList").appendChild(t),document.getElementById("newTodo").value=""}}function removeTodo(e){let t=e.parentNode;document.getElementById("todoList").removeChild(t)}
+function addTodo(){let e=document.getElementById("newTodo").value.trim();if(""!==e){let t=document.getElementById("todoList"),o=document.createElement("li");o.textContent=e,o.classList.add("todo-item","add");let d=document.createElement("button");d.textContent="Remove",d.onclick=function(){removeTodo(o)},o.appendChild(d),t.appendChild(o),document.getElementById("newTodo").value="",setTimeout(()=>{o.classList.remove("add")},100)}}function removeTodo(e){e.classList.add("remove"),setTimeout(()=>{e.parentNode.removeChild(e)},500)}
