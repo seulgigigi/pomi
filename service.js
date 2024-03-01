@@ -1,4 +1,4 @@
-const cacheName = 'your-app-cache-v1';
+const cacheName = 'pomi-timer-cache-v1';
 const filesToCache = [
     '/',
     '/index.html',
@@ -25,6 +25,21 @@ self.addEventListener('install', (e) => {
         caches.open(cacheName).then((cache) => {
             console.log('Caching files');
             return cache.addAll(filesToCache);
+        })
+    );
+});
+
+self.addEventListener('activate', (e) => {
+    console.log('Service Worker activated');
+    e.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.filter((name) => {
+                    return name !== cacheName;
+                }).map((name) => {
+                    return caches.delete(name);
+                })
+            );
         })
     );
 });
