@@ -1,6 +1,8 @@
 * {
     font-family: monospace;
-    margin-left: 1px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -8,8 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
-    min-height: 100vh; /* Change height to min-height */
-    margin: 0;
+    min-height: 100vh; 
     background-color: #fcf6e4; 
     width: 100%;
     height: 100%;
@@ -18,9 +19,9 @@ body {
 iframe {
     max-width: 100%;
     max-height: 100%;
-    margin-top: 35px; 
     width: 80%;
     height: 200px;
+    margin-top: 35px; 
 }
 
 header {
@@ -28,14 +29,13 @@ header {
     width: 100%;
     padding: 10px;
     background-color: rgb(240, 240, 208);
-    padding: 2px;
 }
 
 .title {
     font-size: 2em;
     color: #000;
     margin-bottom: 5px; 
-    text-emphasis-style: bold;
+    font-weight: bold;
 }
 
 .timer-container {
@@ -46,9 +46,8 @@ header {
     border-radius: 15px; 
 }
 
-.timer-container h3{
-    margin-right: auto;
-    margin-left: auto;
+.timer-container h3 {
+    margin: 0 auto;
 }
 
 .input-container {
@@ -63,9 +62,10 @@ header {
     margin-top: 40px;
 }
 
-input[type="number"] {
-    width: 80%; /* Adjust width to be responsive */
-    max-width: 200px; /* Set maximum width */
+input[type="number"],
+#newTodo {
+    width: 80%;
+    max-width: 200px;
     padding: 8px;
     margin-bottom: 10px;
     border: 2px solid #000;
@@ -73,9 +73,8 @@ input[type="number"] {
 }
 
 .buttons {
-    margin-top: -50px;
+    margin-top: 20px;
     margin-bottom: 30px;
-    border-radius: 8px;
 }
 
 button {
@@ -94,7 +93,6 @@ button:hover {
     color: #fff; 
 }
 
-/* Add these styles to define the todo container */
 .todo-container {   
     text-align: center;
     width: 400px;
@@ -103,11 +101,10 @@ button:hover {
     border-radius: 15px;
 }
 
-h2{
+h2 {
     font-size: 200%;
 }
 
-/* Add these styles for the todo container's title */
 .todo-container h2 {
     background-color: #dfe2c2;
     padding: 8px 16px;
@@ -117,7 +114,6 @@ h2{
     margin-right: auto;
 }
 
-/* Add these styles for todo items in the list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -143,17 +139,11 @@ li button {
     cursor: pointer;
 }
 
-/* Add these styles for the "Add Task" input */
 #newTodo {
-    width: 80%; /* Adjust width to be responsive */
-    max-width: 100px; /* Set maximum width */
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 2px solid #000;
-    border-radius: 4px;
+    width: 80%;
+    max-width: 100px;
 }
 
-/* Add these styles for the "Add Task" button */
 #addTaskBtn {
     font-size: 1em;
     padding: 8px 16px;
@@ -165,7 +155,6 @@ li button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Add these styles for the "Add Task" button hover effect */
 #addTaskBtn:hover {
     background-color: #000;
     color: #fff;
@@ -175,16 +164,17 @@ li button {
     width: 85%;
 }
 
-.tutorial-content h1,h2,h3{
+.tutorial-content h1,
+.tutorial-content h2,
+.tutorial-content h3 {
     background-color:#dfe2c2;
     border-radius: 5px;
     width: fit-content;
     text-align: center;
 }
 
-
 #darkMode {
-    border: none; /* Remove border */
-    background: transparent; /* Set background to transparent */
-    cursor: pointer; /* Add pointer cursor */
+    border: none; 
+    background: transparent; 
+    cursor: pointer; 
 }
