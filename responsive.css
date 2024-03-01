@@ -8,15 +8,15 @@
     .timer-container,
     .todo-container {
         width: 100%; /* Adjust width for mobile screens */
-        margin-left: auto;
-        margin-right: auto; /* Center the containers */
+        margin: 10px auto; /* Center the containers */
+        padding: 10px; /* Add padding */
     }
 
     .todo-container {   
         text-align: center;
         background-color: #dfe2c2;
         border-radius: 8px;
-        width: 200%;
+        width: 180%;
     }
 
     /* Add these styles for the todo container's title */
@@ -79,15 +79,15 @@
     body.dark-mode .timer-container,
     body.dark-mode .todo-container {
         width: 100%; /* Adjust width for mobile screens */
-        margin-left: auto;
-        margin-right: auto; /* Center the containers */
+        margin: 10px auto; /* Center the containers */
+        padding: 10px; /* Add padding */
     }
 
     body.dark-mode .todo-container {   
         text-align: center;
         background-color: #333333; /* Dark mode background color */
         border-radius: 8px;
-        width: 200%;
+        width: 180%;
     }
 
     /* Add these styles for the todo container's title */
