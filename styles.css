@@ -109,15 +109,22 @@ button:hover {
     color: #fff; 
 }
 
-.todo-container {   
+.todo-container {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
+    width: 400px; /* Adjust this width as needed */
     margin-top: 20px;
     background-color: #f6f8e3;
     border-radius: 15px;
-    max-height: 360px; 
+    max-height: 360px;
     overflow-y: auto;
+    max-width: 400px; /* Ensure the container takes up full width */
+}
+
+.todo-container ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 360px; /* Limit the height of the list */
 }
 
 h2 {
@@ -133,6 +140,19 @@ h2 {
     margin-right: auto;
 }
 
+.todo-container li .task-name {
+    flex-grow: 1;
+    max-width: calc(100% - 50px); /* Adjust the width to accommodate the remove button */
+    /* Add the following styles to limit the width and allow wrapping */
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    max-height: 3.5em; /* Limit the height to approximately two lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -142,8 +162,8 @@ ul {
 }
 
 li {
-    background-color: #f2f5d5; 
-    border: 2px solid  #f2f5d5; 
+    background-color: #f2f5d5;
+    border: 2px solid  #f2f5d5;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 8px 0;
     padding: 8px;
@@ -151,9 +171,10 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Ensure the remove button is positioned relative to the task item */
-    max-width: 100%; /* Allow task items to take up full width */
-    word-wrap: break-word; 
+    position: relative;
+    word-wrap: break-word; /* Allow task names to wrap to the next line */
+    overflow-wrap: break-word; /* Ensure long words are broken properly */
+    max-width: calc(100% - 20px); /
 }
 
 li button {
@@ -164,8 +185,7 @@ li button {
     padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
-    position: absolute;
-    right: 8px;
+    margin-left: 8px;
 }
 
 #newTodo {

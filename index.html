@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#dfe2c2">
-<!-- HTML Meta Tags -->
-<title>Pomi Timer</title>
-<meta name="description" content="A Pomodoro Timer">
-
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://seulgigigi.github.io/pomi/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pomi Timer">
-<meta property="og:description" content="A Pomodoro Timer">
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/b70d2c47-4904-48d2-a113-c66e810dd16a.jpg?token=Tr5_U1Jj1eGEPN0eFGqEY4do7oUtx24m7ApCutn8ons&height=600&width=1024&expires=33245368765">
-
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="seulgigigi.github.io">
-<meta property="twitter:url" content="https://seulgigigi.github.io/pomi/">
-<meta name="twitter:title" content="Pomi Timer">
-<meta name="twitter:description" content="A Pomodoro Timer">
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/documents/b70d2c47-4904-48d2-a113-c66e810dd16a.jpg?token=Tr5_U1Jj1eGEPN0eFGqEY4do7oUtx24m7ApCutn8ons&height=600&width=1024&expires=33245368765">
-
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="flex.css">
     <link rel="stylesheet" href="responsive.css">
@@ -73,6 +53,7 @@
             <h2>To-Do List</h2>
             <input type="text" id="newTodo" placeholder="Add a task">
             <button onclick="addTodo()">Add</button>
+            <button onclick="removeAllTodos()">Remove All</button>
             <ul id="todoList"></ul>
         </div>
     </div>
