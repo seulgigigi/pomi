@@ -136,6 +136,9 @@ h2 {
 ul {
     list-style-type: none;
     padding: 0;
+    position: relative; /* Ensure the remove button is positioned relative to the task item */
+    max-width: 100%; /* Allow task items to take up full width */
+    word-wrap: break-word; 
 }
 
 li {
@@ -148,6 +151,9 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Ensure the remove button is positioned relative to the task item */
+    max-width: 100%; /* Allow task items to take up full width */
+    word-wrap: break-word; 
 }
 
 li button {
@@ -158,11 +164,13 @@ li button {
     padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
+    position: absolute;
+    right: 8px;
 }
 
 #newTodo {
     width: 80%;
-    max-width: 100px;
+    max-width: calc(100% - 40px);
 }
 
 #addTaskBtn {
