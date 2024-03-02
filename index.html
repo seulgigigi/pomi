@@ -15,14 +15,17 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="title">Pomi Timer ฅ^•ﻌ•^ฅ
-            <button id="darkMode"><span class="material-symbols-outlined">
-                emoji_objects
-                </span>
-                </span></button>
-        </h1>
-        <p class="subtitle">Presented by Group 1</a>
-        </p>
+        <h1 class="title">Pomi Timer ฅ^•ﻌ•^ฅ</h1>
+        <div class="button-container">
+            <button id="darkMode" onclick="toggleDarkMode()">
+                <span class="material-symbols-outlined">emoji_objects</span>
+            </button>
+            <button id="installButton" onclick="installApp()">Install</button>
+            <button id="questionnaireButton" onclick="redirectToForm()">Questionnaire</button>  
+        </div>
+        <div class="subtitle">
+            <p>Presented by Group 1</p>
+        </div>
     </header>
     <div class="container">
         <div class="fade-in">
@@ -118,5 +121,6 @@
     <script src="fade.js"></script>
     <script src="dark.js"></script>
     <script src="todostorage.js"></script>
+    <script src="header.js"></script>
 </body>
 </html>

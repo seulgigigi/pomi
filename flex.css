@@ -34,3 +34,99 @@ body.dark-mode .todo-container {
     margin-top: 50px; 
     margin-left: 50px;
 }
+
+/* Styles for the header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for the title */
+.title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Styles for the button container */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Styles for the buttons */
+.button-container button {
+    margin: 5px;
+    background-color: transparent; /* Blue color */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styles for the dark mode button */
+#darkMode {
+    background-color: transparent; /* Dark gray color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the subtitle */
+.subtitle {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666; /* Gray color */
+}
+
+body.dark-mode .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Styles for the header */
+body.dark-mode .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for the title */
+body.dark-mode .title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Styles for the button container */
+body.dark-mode .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Styles for the buttons */
+body.dark-mode .button-container button {
+    margin: 5px;
+    background-color: transparent; /* Blue color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styles for the dark mode button */
+#darkMode {
+    background-color: transparent; /* Dark gray color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the subtitle */
+body.dark-mode .subtitle {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666; /* Gray color */
+}
+

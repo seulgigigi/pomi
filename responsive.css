@@ -12,7 +12,7 @@
 
     .todo-container {   
         text-align: center;
-        background-color: #dfe2c2;
+        background-color: #f6f8e3;
         border-radius: 8px;
         width: 180%;
         max-height: 300px; 
@@ -21,7 +21,7 @@
 
     
     .todo-container h2 {
-        background-color: #dfe2c2;
+        background-color: #f6f8e3;
         padding: 8px 16px;
         border-radius: 4px;
         margin-bottom: 10px;
