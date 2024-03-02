@@ -1,15 +1,13 @@
-/* Default light mode styles */
-/* Media query for mobile devices */
 @media screen and (max-width: 600px) {
     .container {
-        flex-direction: column; /* Stack items vertically for mobile view */
+        flex-direction: column; 
     }
 
     .timer-container,
     .todo-container {
-        width: 100%; /* Adjust width for mobile screens */
-        margin: 10px auto; /* Center the containers */
-        padding: 10px; /* Add padding */
+        width: 100%; 
+        margin: 10px auto; 
+        padding: 10px; 
     }
 
     .todo-container {   
@@ -17,11 +15,11 @@
         background-color: #dfe2c2;
         border-radius: 8px;
         width: 180%;
-        max-height: 300px; /* Adjust the maximum height as needed */
+        max-height: 300px; 
         overflow-y: auto; 
     }
 
-    /* Add these styles for the todo container's title */
+    
     .todo-container h2 {
         background-color: #dfe2c2;
         padding: 8px 16px;
@@ -29,18 +27,18 @@
         margin-bottom: 10px;
     }
 
-    /* Add these styles for todo items in the list */
+    
     ul {
         list-style-type: none;
         padding: 0;
     }
 
     li {
-        background-color: #ffffff;
+        background-color: #f2f5d5; 
+        border: 2px solid  #f2f5d5; 
         margin: 8px 0;
         padding: 8px;
         border-radius: 4px;
-        border: 2px solid #000;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -48,8 +46,8 @@
 
     li button {
         background-color: #ca7373;
+        border: 2px solid #ca7373;
         color: #fff;
-        border: 2px solid #000;
         padding: 4px 8px;
         border-radius: 4px;
         cursor: pointer;
@@ -62,58 +60,62 @@
         max-width: 100%;
     }
 
-    .tutorial-content h1 {
-        width: fit-content;
-        font-size: auto;
+    .tutorial-content h1,
+    .tutorial-content h2{
+        font-size: 200%;
+    }
+
+    .tutorial-content h3 {
+        font-size: 120%; ;
     }
 
     .tutorial-content{
-        width: 98%;
+        width: 99%;
     }
 }
 
-/* Dark mode styles */
+
 @media screen and (max-width: 600px) {
     body.dark-mode .container {
-        flex-direction: column; /* Stack items vertically for mobile view */
+        flex-direction: column; 
     }
 
     body.dark-mode .timer-container,
     body.dark-mode .todo-container {
-        width: 100%; /* Adjust width for mobile screens */
-        margin: 10px auto; /* Center the containers */
-        padding: 10px; /* Add padding */
+        width: 100%; 
+        margin: 10px auto; 
+        padding: 10px; 
     }
 
     body.dark-mode .todo-container {   
         text-align: center;
-        background-color: #333333; /* Dark mode background color */
+        background-color: #333333; 
         border-radius: 8px;
         width: 180%;
-        max-height: 300px; /* Adjust the maximum height as needed */
+        max-height: 300px; 
         overflow-y: auto; 
     }
 
-    /* Add these styles for the todo container's title */
+    
     body.dark-mode .todo-container h2 {
-        background-color: #333333; /* Dark mode background color */
+        background-color: #333333; 
         padding: 8px 16px;
         border-radius: 4px;
         margin-bottom: 10px;
     }
 
-    /* Add these styles for todo items in the list */
+    
     body.dark-mode ul {
         list-style-type: none;
         padding: 0;
     }
 
     body.dark-mode li {
-        background-color: #121212; /* Dark mode background color */
+        background-color: #3b3b3b;
+        border: 2px solid  #3b3b3b;
         margin: 8px 0;
         padding: 8px;
         border-radius: 4px;
-        border: 2px solid #ffffff; /* Dark mode border color */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -121,8 +123,8 @@
 
     body.dark-mode li button {
         background-color: #ca7373;
+        border: 2px solid #ca7373;
         color: #ffffff;
-        border: 2px solid #ffffff; /* Dark mode border color */
         padding: 4px 8px;
         border-radius: 4px;
         cursor: pointer;
@@ -135,12 +137,16 @@
         max-width: 100%;
     }
 
-    body.dark-mode .tutorial-content h1 {
-        width: fit-content;
-        font-size: auto;
+    body.dark-mode .tutorial-content h1,
+    .tutorial-content h2{
+        font-size: 200%;
+    }
+
+    body.dark-mode .tutorial-content h3 {
+        font-size: 120%; ;
     }
 
     body.dark-mode .tutorial-content{
-        width: 98%;
+        width: 99%;
     }
 }

@@ -17,6 +17,7 @@ const filesToCache = [
     '/responsive.css',
     '/todo.js',
     '/pwa.jpeg',
+    '/todostorage.js',
 ];
 
 self.addEventListener('install', (e) => {

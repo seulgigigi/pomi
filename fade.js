@@ -1,17 +1,1 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.fade-in');
-    const fadeInOptions = {
-        threshold: 0.5 // Adjust threshold as needed
-    };
-    const fadeInObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, fadeInOptions);
-    elements.forEach(function(element) {
-        fadeInObserver.observe(element);
-    });
-});
+document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".fade-in"),t=new IntersectionObserver(function(e,t){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("active"),t.unobserve(e.target))})},{threshold:.5});e.forEach(function(e){t.observe(e)})});

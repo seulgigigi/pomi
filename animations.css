@@ -1,4 +1,3 @@
-/* Define the animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -26,39 +25,32 @@
     }
 }
 
-/* Apply animations to specific elements */
 .header,
 .container {
-    animation: fadeIn 0.5s ease-out; /* Apply fadeIn animation to header and container */
+    animation: fadeIn 0.5s ease-out;
 }
 
-.timer-container {
-    animation: fadeIn 0.5s ease-out, slideInUp 0.5s ease-out; /* Apply fadeIn and slideInUp animations to timer-container */
-}
-
+.timer-container,
 .todo-container {
-    animation: fadeIn 0.5s ease-out, slideInUp 0.5s ease-out; /* Apply fadeIn and slideInUp animations to todo-container */
+    animation: fadeIn 0.5s ease-out, slideInUp 0.5s ease-out;
 }
 
-/* Additional animations for tutorial content */
 .tutorial-content {
-    animation: fadeIn 0.5s ease-out; /* Apply fadeIn animation to tutorial-content */
+    animation: fadeIn 0.5s ease-out;
 }
 
-/* Apply animations to specific elements */
 .todo-item.add {
-    animation: fadeIn 0.5s forwards; /* Apply fade-in animation */
+    animation: fadeIn 0.5s forwards;
 }
 
 .todo-item.remove {
-    animation: fadeOut 0.3s forwards; /* Apply fade-out animation with quicker duration */
+    animation: fadeOut 0.3s forwards;
 }
 
 .todo-item button {
-    margin-left: 10px; /* Adjust margin for the remove button */
+    margin-left: 10px;
 }
 
-/* Define the fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -68,7 +60,6 @@
     }
 }
 
-/* Apply the fade-in animation to elements with the fade-in class */
 .fade-in {
     animation: fadeIn 1s ease-in-out;
 }

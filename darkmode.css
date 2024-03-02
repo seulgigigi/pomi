@@ -8,19 +8,20 @@
     scroll-behavior: smooth; 
 }
 
+.dark-mode header {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #1f1e1e;
+}
+
 .dark-mode iframe {
     max-width: 100%;
     max-height: 100%;
     width: 80%;
     height: 200px;
     margin-top: 35px; 
-}
-
-.dark-mode header {
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    background-color: #121212;
 }
 
 .dark-mode .title {
@@ -36,10 +37,6 @@
 
 .dark-mode #study-tracker {
     color: #ffffff;
-}
-
-.dark-mode #container{
-    background-color:  #292828;
 }
 
 .dark-mode .timer-container {
@@ -75,7 +72,8 @@
     margin-bottom: 10px;
     border: 2px solid #ffffff;
     border-radius: 4px;
-    background-color: transparent;
+    background-color: #505050;
+    border: 2px solid #505050;
     color: #ffffff;
 }
 
@@ -89,9 +87,10 @@
     margin: 10px;
     padding: 8px 16px;
     cursor: pointer;
-    background-color: #333333;
     color: #ffffff;
-    border: 2px solid #ffffff;
+    background-color: #505050;
+    border: 2px solid #505050;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -106,7 +105,7 @@
     margin-top: 20px;
     background-color: #333333;
     border-radius: 15px;
-    max-height: 360px; /* Adjust the maximum height as needed */
+    max-height: 360px; 
     overflow-y: auto;
 }
 
@@ -126,21 +125,23 @@
 }
 
 .dark-mode li {
-    background-color: #333333;
+    background-color: #3b3b3b;
+    border: 2px solid  #3b3b3b;
     margin: 8px 0;
     padding: 8px;
     border-radius: 4px;
-    border: 2px solid #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ffffff; /* Set text color to white */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff; 
 }
 
 .dark-mode li button {
     background-color: #ca7373;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     color: #ffffff;
-    border: 2px solid #ffffff;
+    border: 2px solid #ca7373;
     padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
@@ -153,8 +154,8 @@
     margin-bottom: 10px;
     border: 2px solid #ffffff;
     border-radius: 4px;
-    background-color: transparent;
-    color: #ffffff;
+    background-color: #505050;
+    border: 2px solid #505050;
 }
 
 .dark-mode #addTaskBtn {
@@ -174,7 +175,8 @@
 }
 
 .dark-mode .tutorial-content {
-    width: 85%;
+    width: 95%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .tutorial-content h1,
@@ -182,7 +184,24 @@
 .dark-mode .tutorial-content h3 {
     background-color: #333333;
     border-radius: 5px;
-    width: fit-content;
     text-align: center;
-    color: #ffffff; /* Set text color to white */
+    color: #ffffff; 
+}
+
+
+.todo-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.todo-container::-webkit-scrollbar-track {
+    background: #afafaf; 
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 5px;
+}
+
+.todo-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
 }
