@@ -18,5 +18,5 @@ function installApp() {
 
 // Add this script to redirect to the Google Form
 function redirectToForm() {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdosCudBPhLgV1hoYw7Hhvdl3u9ZLI2R4E2UTJAsi1MyI6fLw/viewform", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSf1nytpAv-i1xYy7wXb_Et3JU51sw7lz8TCHcpHn5jIoklmHQ/viewform", "_blank");
 }
