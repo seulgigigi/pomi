@@ -1,1 +1,0 @@
-function getToDoList(){let t=localStorage.getItem("todoList");return t?JSON.parse(t):[]}function saveToDoList(t){localStorage.setItem("todoList",JSON.stringify(t))}let todoList=getToDoList();const newTask={id:1,task:"Example task",completed:!1};todoList.push(newTask),saveToDoList(todoList);
