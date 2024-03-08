@@ -1,19 +1,17 @@
-// data.js
-
 document.addEventListener("DOMContentLoaded", function() {
     // Open a connection to the database
     const request = indexedDB.open('todoDatabase', 1);
 
     // Define the database schema
     request.onupgradeneeded = function(event) {
-      const db = event.target.result;
-      const objectStore = db.createObjectStore('tasks', { keyPath: 'id', autoIncrement: true });
-      objectStore.createIndex('taskName', 'taskName', { unique: false });
+        const db = event.target.result;
+        const objectStore = db.createObjectStore('tasks', { keyPath: 'id', autoIncrement: true });
+        objectStore.createIndex('taskName', 'taskName', { unique: false });
     };
 
     // Handle errors
     request.onerror = function(event) {
-      console.error('Database error:', event.target.errorCode);
+        console.error('Database error:', event.target.errorCode);
     };
 
     // Handle successful database creation
@@ -29,10 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
             const tasks = event.target.result;
             // Populate the to-do list with tasks
             const todoList = document.getElementById('todoList');
-            todoList.innerHTML = ""; // Clear existing tasks
             tasks.forEach(task => {
                 const li = document.createElement('li');
                 li.textContent = task.taskName;
+                li.classList.add("todo-item");
+                // Create a remove button for the task
+                let removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.onclick = function() {
+                    removeTodoFromDOM(li); // Remove task from DOM
+                    removeTodoFromIndexedDB(task.taskName); // Remove task from IndexedDB
+                };
+                li.appendChild(removeButton);
                 todoList.appendChild(li);
             });
         };
@@ -41,5 +47,4 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Error retrieving tasks from database:', event.target.errorCode);
         };
     };
-
 });
