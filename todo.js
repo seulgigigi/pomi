@@ -1,3 +1,5 @@
+// todo.js
+
 function addTodo() {
     let taskInput = document.getElementById("newTodo");
     let task = taskInput.value.trim();
@@ -29,3 +31,20 @@ function addTodo() {
     }
 }
 
+// Function to add a new task
+function addTask(taskName) {
+    const request = indexedDB.open('todoDatabase', 1);
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction(['tasks'], 'readwrite');
+        const objectStore = transaction.objectStore('tasks');
+        const newTask = { taskName };
+        const addRequest = objectStore.add(newTask);
+        addRequest.onsuccess = function(event) {
+            console.log('Task added to database');
+        };
+        addRequest.onerror = function(event) {
+            console.error('Error adding task to database:', event.target.errorCode);
+        };
+    };
+}
