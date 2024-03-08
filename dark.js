@@ -1,1 +1,0 @@
-const darkModeButton=document.getElementById("darkMode"),body=document.body;darkModeButton.addEventListener("click",()=>{body.classList.toggle("dark-mode");let d=body.classList.contains("dark-mode");localStorage.setItem("darkMode",d)});const darkModeEnabled="true"===localStorage.getItem("darkMode");darkModeEnabled&&body.classList.add("dark-mode");
