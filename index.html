@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="animations.css">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then((reg) => {
+                console.log('Service worker registered.', reg);
+              })
+              .catch((err) => {
+                console.error('Service worker registration failed:', err);
+              });
+          });
+        }
+      </script>      
     <title>Pomi Timer</title>
 </head>
 <body>
