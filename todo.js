@@ -1,5 +1,3 @@
-// todo.js
-
 // Function to add a new task
 function addTodo() {
     // Retrieve the task input element
@@ -21,7 +19,6 @@ function addTodo() {
             removeButton.textContent = "Remove";
             removeButton.onclick = function() {
                 removeTodoFromDOM(listItem); // Remove task from DOM
-                removeTodoFromIndexedDB(task); // Remove task from IndexedDB
             };
             listItem.appendChild(removeButton);
             
@@ -31,8 +28,8 @@ function addTodo() {
             // Clear the task input field
             taskInput.value = "";
             
-            // Add task to IndexedDB
-            addTask(task);
+            // Save task to local storage
+            saveTask(task);
         }
     } else {
         alert("Task must be 35 characters or less.");
@@ -42,10 +39,48 @@ function addTodo() {
 // Function to remove a task from the DOM
 function removeTodoFromDOM(listItem) {
     listItem.remove();
+    // Remove task from local storage
+    removeTask(listItem.textContent);
 }
 
-// Function to remove all tasks from the DOM
+// Function to save task to local storage
+function saveTask(task) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Function to remove a task from local storage
+function removeTask(task) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(t => t !== task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Function to remove all tasks from the DOM and local storage
 function removeAllTodos() {
     let todoList = document.getElementById("todoList");
     todoList.innerHTML = ""; // Clear the todo list
+    // Clear tasks from local storage
+    localStorage.removeItem("tasks");
 }
+
+// Load tasks from local storage when the page is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    let todoList = document.getElementById("todoList");
+    tasks.forEach(task => {
+        let listItem = document.createElement("li");
+        listItem.textContent = task;
+        listItem.classList.add("todo-item", "add");
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.onclick = function() {
+            removeTodoFromDOM(listItem);
+        };
+        listItem.appendChild(removeButton);
+
+        todoList.appendChild(listItem);
+    });
+});
